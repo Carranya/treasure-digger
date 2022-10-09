@@ -1,8 +1,9 @@
 class Game {
     constructor() {
-        this.cols = 20;
-        this.rows = 15;
+        this.cols = 10;
+        this.rows = 10;
         this.setChests = {};
+        this.findChests = 0;
         this.chests = 10;
         this.turns = 0;
         this.counter = 0;
@@ -21,6 +22,9 @@ class Game {
         board.style.display = "flex";
         board.style.flexWrap = "wrap";
         document.getElementById("main").append(board);
+
+        document.getElementById("turns").innerHTML = "Turns: " + this.turns;
+        document.getElementById("infoChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
     }
 
     randChests() {
@@ -86,49 +90,13 @@ class Game {
 
     }
 
-    /*     setTiles() {
-            for (let c = 0; c < this.cols; c++) {
-                for (let r = 0; r < this.rows; r++) {
-                    let tileId = c + "" + r;
-    
-                    if (this.setChests[c + "-" + r] == "chest") {
-                        let checkId = parseInt(tileId);
-                        let direction = [
-                            (checkId - this.cols),
-                            (checkId + 1),
-                            (checkId + this.cols),
-                            (checkId - 1)
-                        ];
-    
-                        for (let i = 0; i < 4; i++) {
-                            let nearTileId
-                            if(direction[i] < 10){
-                                nearTileId = "0" + direction[i].toString();
-                            } else {
-                                nearTileId = direction[i].toString();
-                            }
-    
-                            if (this.setChests[nearTileId] != "chest") {
-                                this.setChests[nearTileId] = "near";
-                            }
-                        }
-                    }
-    
-                    if (this.setChests[tileId] == undefined) {
-                        this.setChests[tileId] = "empty";
-                    }
-                }
-            }
-    
-    
-        } */
-
     createBoard() {
         for (let r = 0; r < this.rows; r++) {
             for (let c = 0; c < this.cols; c++) {
                 let fieldId = c + "-" + r;
                 let tile = document.createElement("img");
-                tile.src = "img/" + this.setChests[fieldId] + ".jpg";
+                // tile.src = "img/" + this.setChests[fieldId] + ".jpg";
+                tile.src = "img/back.jpg";
                 tile.id = fieldId;
                 tile.setAttribute("style", "");
                 tile.style.width = "48px";
