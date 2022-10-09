@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="main"></div>
-
-    <div id="test"></div>
+    <div id="turns"></div>
+    <div id="infoChests"></div>
 </body>
 </html>
