@@ -7,7 +7,7 @@ class Game {
         this.chests = 10;
         this.turns = 0;
         this.counter = 0;
-        
+
     }
 
     createBoardSize() {
@@ -103,16 +103,12 @@ class Game {
     }
 
 
-    checkCard(pickId){
+    checkCard(pickId) {
         let pickCard = document.getElementById(pickId);
         pickCard.src = "img/" + this.setChests[pickId] + ".jpg";
     }
-    
-
 
 }
-
-
 
 window.onload = function () {
     let game;
@@ -124,14 +120,12 @@ window.onload = function () {
     game.setTiles();
     game.createBoard();
 
-    for (let r=0; r<rows; r++){
-        for (let c=0; c<cols; c++){
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
             let pickId = c + "-" + r;
             let pick = document.getElementById(pickId);
-            pick.addEventListener("click", function(){game.checkCard(pickId);});
+            pick.addEventListener("click", function () { game.checkCard(pickId); });
         }
     }
-
-
 
 }
