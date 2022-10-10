@@ -13,15 +13,9 @@ class Game {
         let boardWidth = this.cols * 50;
         let boardHeight = this.rows * 50;
 
-        let board = document.createElement("div");
-        board.setAttribute("id", "board");
-        board.setAttribute("style", "");
+        let board = document.getElementById("board");
         board.style.width = boardWidth + "px";
         board.style.height = boardHeight + "px";
-        board.style.border = "5px solid green";
-        board.style.display = "flex";
-        board.style.flexWrap = "wrap";
-        document.getElementById("main").append(board);
 
         document.getElementById("turns").innerHTML = "Turns: " + this.turns;
         document.getElementById("infoChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;

@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="main"></div>
-    <div id="turns"></div>
-    <div id="infoChests"></div>
+    <div id="header">Treasure Digger</div>
+    <br>
+    <div id="board"></div>
+    <br>
+    <div id="turns" class="infoScore"></div>
+    <div id="infoChests" class="infoScore"></div>
 </body>
 </html>

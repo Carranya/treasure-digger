@@ -1,0 +1,22 @@
+body {
+    font-family: Verdana;
+    color: green;text-align: center;
+}
+
+#header {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#board {
+    border: 5px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto auto;
+}
+
+.infoScore {
+    font-size: 1.5em;
+    font-weight: bold;
+}
