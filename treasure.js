@@ -1,7 +1,7 @@
 class Game {
-    constructor() {
-        this.cols = 10;
-        this.rows = 10;
+    constructor(cols, rows) {
+        this.cols = cols;
+        this.rows = rows;
         this.setChests = {};
         this.findChests = 0;
         this.chests = 10;
@@ -102,23 +102,13 @@ class Game {
         }
     }
 
-   
-
-    pickTile(){
-        for (let r=0; r<this.rows; r++){
-            for (let c=0; c<this.cols; c++){
-                let pickId = c + "-" + r;
-                let pick = document.getElementById(pickId);
-                
-                pick.addEventListener("click", function() {checkCard(pickId);});
-            }
-        }
-    }
 
     checkCard(pickId){
-        alert(pickId);
+        let pickCard = document.getElementById(pickId);
+        pickCard.src = "img/" + this.setChests[pickId] + ".jpg";
     }
     
+
 
 }
 
@@ -126,11 +116,22 @@ class Game {
 
 window.onload = function () {
     let game;
-    game = new Game;
+    let cols = 10;
+    let rows = 10;
+    game = new Game(cols, rows);
     game.createBoardSize();
     game.randChests();
     game.setTiles();
     game.createBoard();
-    game.pickTile();
+
+    for (let r=0; r<rows; r++){
+        for (let c=0; c<cols; c++){
+            let pickId = c + "-" + r;
+            let pick = document.getElementById(pickId);
+            pick.addEventListener("click", function(){game.checkCard(pickId);});
+        }
+    }
+
+
 
 }
