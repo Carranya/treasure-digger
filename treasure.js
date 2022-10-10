@@ -7,6 +7,7 @@ class Game {
         this.chests = 10;
         this.turns = 0;
         this.counter = 0;
+        
     }
 
     createBoardSize() {
@@ -101,7 +102,27 @@ class Game {
         }
     }
 
+   
+
+    pickTile(){
+        for (let r=0; r<this.rows; r++){
+            for (let c=0; c<this.cols; c++){
+                let pickId = c + "-" + r;
+                let pick = document.getElementById(pickId);
+                
+                pick.addEventListener("click", function() {checkCard(pickId);});
+            }
+        }
+    }
+
+    checkCard(pickId){
+        alert(pickId);
+    }
+    
+
 }
+
+
 
 window.onload = function () {
     let game;
@@ -110,5 +131,6 @@ window.onload = function () {
     game.randChests();
     game.setTiles();
     game.createBoard();
+    game.pickTile();
 
 }
