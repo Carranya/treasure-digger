@@ -14,6 +14,6 @@
     <div id="board"></div>
     <br>
     <div id="turns" class="infoScore"></div>
-    <div id="infoChests" class="infoScore"></div>
+    <div id="findChests" class="infoScore"></div>
 </body>
 </html>
