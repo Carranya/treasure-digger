@@ -4,7 +4,7 @@ class Game {
         this.rows = rows;
         this.setChests = {};
         this.findChests = 0;
-        this.chests = 3;
+        this.chests = 10;
         this.turns = 0;
         this.counter = 0;
 
@@ -116,12 +116,21 @@ class Game {
         document.getElementById("findChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
 
         if(this.findChests == this.chests){
+            for(let r=0; r<this.rows; r++){
+                for(let c=0; c<this.cols; c++){
+                    let winId = c + "-" + r;
+                    let winShow = document.getElementById(winId);
+                    winShow.src = "img/" + this.setChests[winId] + ".jpg";
+                }
+            }
+
+            document.getElementById("winTurns").innerHTML = this.turns;
             setTimeout(this.win, 1000);
         }
     }
 
     win(){
-        alert("You win!");
+        document.getElementById("winBox").style.transform = "translate(0, 0)";
     }
 
 }

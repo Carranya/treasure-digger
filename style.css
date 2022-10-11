@@ -32,7 +32,7 @@ body {
     color: green;
     top: 20%;
     left: 40%;
-    transform: translate(0, 0);
+    transform: translate(0, -3000px);
     transition: transform 1s;
 }
 
