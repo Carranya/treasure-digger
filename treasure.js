@@ -4,7 +4,7 @@ class Game {
         this.rows = rows;
         this.setChests = {};
         this.findChests = 0;
-        this.chests = 10;
+        this.chests = 3;
         this.turns = 0;
         this.counter = 0;
 
@@ -108,8 +108,15 @@ class Game {
         pickCard.src = "img/" + this.setChests[pickId] + ".jpg";
         this.turns++;
 
-        if(this.setChests == "chest"){
+        if(this.setChests[pickId] == "chest"){
             this.findChests++;
+        }
+
+        document.getElementById("turns").innerHTML = "Turns: " + this.turns;
+        document.getElementById("findChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
+
+        if(this.findChests == this.chests){
+            alert("You win!");
         }
 
 
