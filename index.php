@@ -15,6 +15,11 @@
     <br>
     <div id="turns" class="infoScore"></div>
     <div id="findChests" class="infoScore"></div>
+    <div id="setupGame">
+        <p><input id="setupCols"></p>
+        <p><input id="setupRows"></p>
+        <p><input type="button" id="idButton" value="Setup"></p>
+    </div>
     <div id="winBox">
         <h1>You win!</h1>
         <p>Turns: <span id="winTurns"></span></p>

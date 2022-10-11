@@ -137,9 +137,13 @@ class Game {
 
 window.onload = function () {
     let game;
-    let cols = 10;
-    let rows = 10;
-    game = new Game(cols, rows);
+
+    document.getElementById("idButton").addEventListener("click", setupGame);
+
+    function setupGame(){
+        let cols = document.getElementById("setupCols").value;
+        let rows = document.getElementById("setupRows").value;
+        game = new Game(cols, rows);
     game.createBoardSize();
     game.randChests();
     game.setTiles();
@@ -152,5 +156,22 @@ window.onload = function () {
             pick.addEventListener("click", function () { game.checkCard(pickId); });
         }
     }
+    }
 
+    /* let cols = 10;
+     let rows = 10;
+    game = new Game(cols, rows)
+    game.createBoardSize();
+    game.randChests();
+    game.setTiles();
+    game.createBoard();
+
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            let pickId = c + "-" + r;
+            let pick = document.getElementById(pickId);
+            pick.addEventListener("click", function () { game.checkCard(pickId); });
+        }
+    }
+*/
 }
