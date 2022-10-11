@@ -19,7 +19,7 @@ class Game {
         board.style.height = boardHeight + "px";
 
         document.getElementById("turns").innerHTML = "Turns: " + this.turns;
-        document.getElementById("infoChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
+        document.getElementById("findChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
     }
 
     randChests() {
@@ -106,6 +106,13 @@ class Game {
     checkCard(pickId) {
         let pickCard = document.getElementById(pickId);
         pickCard.src = "img/" + this.setChests[pickId] + ".jpg";
+        this.turns++;
+
+        if(this.setChests == "chest"){
+            this.findChests++;
+        }
+
+
     }
 
 }
