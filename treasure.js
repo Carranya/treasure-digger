@@ -116,10 +116,12 @@ class Game {
         document.getElementById("findChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
 
         if(this.findChests == this.chests){
-            alert("You win!");
+            setTimeout(this.win, 1000);
         }
+    }
 
-
+    win(){
+        alert("You win!");
     }
 
 }
