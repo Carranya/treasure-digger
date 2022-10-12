@@ -9,19 +9,12 @@ body {
     font-style: italic;
 }
 
-#board {
-    border: 5px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto auto;
-}
-
 .infoScore {
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#winBox {
+.infoBox {
     position: absolute;
     display: block;
     width: 200px;
@@ -32,8 +25,11 @@ body {
     color: green;
     top: 20%;
     left: 40%;
-    transform: translate(0, -3000px);
     transition: transform 1s;
+}
+
+#winBox {
+    transform: translate(0, -3000px);
 }
 
 #newGame {
@@ -48,4 +44,12 @@ body {
 
 #newGame:hover {
     opacity: 0.6;
+}
+
+#gameSettings {
+    transform: translate(0, 0);
+}
+
+#errorBox {
+    transform: translate(0, -3000px);
 }
