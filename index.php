@@ -11,16 +11,40 @@
 <body>
     <div id="header">Treasure Digger</div>
     <br>
-    <div id="board"></div>
-    <br>
-    <div id="turns" class="infoScore"></div>
-    <div id="findChests" class="infoScore"></div>
-    <div id="setupGame">
-        <p><input id="setupCols"></p>
-        <p><input id="setupRows"></p>
-        <p><input type="button" id="idButton" value="Setup"></p>
+        <div id="board"></div>
+        <br>
+        <div id="turns" class="infoScore"></div>
+        <div id="findChests" class="infoScore"></div>
+
+    <div id="gameSettings" class="infoBox">
+        <p>Columns: <select id="setupCols">
+            <?php
+                for($c = 5; $c<=20; $c=$c+5){
+                    echo "<option value=$c>$c</option>";
+                }
+            ?>
+            </select><br>
+
+            Rows: <select id="setupRows">
+            <?php
+                for($r=5; $r<=20; $r=$r+5){
+                    echo "<option value=$r>$r</option>";
+                }
+            ?>
+            </select><br>
+
+            Chests: <select id="setupChests">
+            <?php
+                for($ch=5; $ch<=20; $ch++){
+                    echo "<option value=$ch>$ch</option>";
+                }
+            ?>
+            </select></p>
+            
+        <p><input type="button" id="idSettings" value="Start Game"></p>
     </div>
-    <div id="winBox">
+
+    <div id="winBox" class="infoBox">
         <h1>You win!</h1>
         <p>Turns: <span id="winTurns"></span></p>
         <p><a href="index.php" id="newGame">New Game?</a><p>
