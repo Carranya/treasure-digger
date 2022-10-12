@@ -1,10 +1,10 @@
 class Game {
-    constructor(cols, rows) {
+    constructor(cols, rows, chests) {
         this.cols = cols;
         this.rows = rows;
+        this.chests = chests;
         this.setChests = {};
         this.findChests = 0;
-        this.chests = 10;
         this.turns = 0;
         this.counter = 0;
 
@@ -17,6 +17,10 @@ class Game {
         let board = document.getElementById("board");
         board.style.width = boardWidth + "px";
         board.style.height = boardHeight + "px";
+        board.style.border = "5px solid black";
+        board.style.display = "flex";
+        board.style.flexWrap = "wrap";
+        board.style.margin ="auto auto";
 
         document.getElementById("turns").innerHTML = "Turns: " + this.turns;
         document.getElementById("findChests").innerHTML = "Chests: " + this.findChests + "/" + this.chests;
@@ -138,40 +142,28 @@ class Game {
 window.onload = function () {
     let game;
 
-    document.getElementById("idButton").addEventListener("click", setupGame);
+    document.getElementById("idSettings").addEventListener("click", gameSettings);
 
-    function setupGame(){
+    function gameSettings(){
+
+        document.getElementById("gameSettings").style.transform = "translate(0, -3000px)";
+        
         let cols = document.getElementById("setupCols").value;
         let rows = document.getElementById("setupRows").value;
-        game = new Game(cols, rows);
-    game.createBoardSize();
-    game.randChests();
-    game.setTiles();
-    game.createBoard();
+        let chests = document.getElementById("setupChests").value;
 
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-            let pickId = c + "-" + r;
-            let pick = document.getElementById(pickId);
-            pick.addEventListener("click", function () { game.checkCard(pickId); });
+        game = new Game(cols, rows, chests);
+        game.createBoardSize();
+        game.randChests();
+        game.setTiles();
+        game.createBoard();
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                let pickId = c + "-" + r;
+                let pick = document.getElementById(pickId);
+                pick.addEventListener("click", function () { game.checkCard(pickId); });
+            }
         }
     }
-    }
-
-    /* let cols = 10;
-     let rows = 10;
-    game = new Game(cols, rows)
-    game.createBoardSize();
-    game.randChests();
-    game.setTiles();
-    game.createBoard();
-
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-            let pickId = c + "-" + r;
-            let pick = document.getElementById(pickId);
-            pick.addEventListener("click", function () { game.checkCard(pickId); });
-        }
-    }
-*/
 }
