@@ -19,7 +19,7 @@
     <div id="gameSettings" class="infoBox">
         <p>Columns: <select id="setupCols">
             <?php
-                for($c = 5; $c<=20; $c=$c+5){
+                for($c = 10; $c<=20; $c=$c+5){
                     echo "<option value=$c>$c</option>";
                 }
             ?>
@@ -27,7 +27,7 @@
 
             Rows: <select id="setupRows">
             <?php
-                for($r=5; $r<=20; $r=$r+5){
+                for($r=10; $r<=20; $r=$r+5){
                     echo "<option value=$r>$r</option>";
                 }
             ?>
@@ -35,7 +35,7 @@
 
             Chests: <select id="setupChests">
             <?php
-                for($ch=5; $ch<=20; $ch++){
+                for($ch=10; $ch<=20; $ch++){
                     echo "<option value=$ch>$ch</option>";
                 }
             ?>
