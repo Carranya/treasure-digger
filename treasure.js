@@ -101,7 +101,6 @@ class Game {
                 tile.style.width = "48px";
                 tile.style.height = "48px";
                 tile.style.border = "1px solid black";
-                tile.style.zIndex = "1";
                 document.getElementById("board").append(tile);
             }
         }
@@ -109,14 +108,12 @@ class Game {
 
     hoverCard(pickId) {
         let pickCard = document.getElementById(pickId);
-        pickCard.style.zIndex ="2";
-        pickCard.style.transform ="scale(1.2)";
+        pickCard.style.opacity ="0.5";
     }
 
     cancelHoverCard(pickId) {
         let pickCard = document.getElementById(pickId);
-        pickCard.style.zIndex ="1";
-        pickCard.style.transform ="scale(1.0)";
+        pickCard.style.opacity ="1";
     }
 
 
