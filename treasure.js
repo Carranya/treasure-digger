@@ -101,9 +101,22 @@ class Game {
                 tile.style.width = "48px";
                 tile.style.height = "48px";
                 tile.style.border = "1px solid black";
+                tile.style.zIndex = "1";
                 document.getElementById("board").append(tile);
             }
         }
+    }
+
+    hoverCard(pickId) {
+        let pickCard = document.getElementById(pickId);
+        pickCard.style.zIndex ="2";
+        pickCard.style.transform ="scale(1.2)";
+    }
+
+    cancelHoverCard(pickId) {
+        let pickCard = document.getElementById(pickId);
+        pickCard.style.zIndex ="1";
+        pickCard.style.transform ="scale(1.0)";
     }
 
 
@@ -162,6 +175,8 @@ window.onload = function () {
             for (let c = 0; c < cols; c++) {
                 let pickId = c + "-" + r;
                 let pick = document.getElementById(pickId);
+                pick.addEventListener("mouseover", function() { game.hoverCard(pickId); });
+                pick.addEventListener("mouseout", function() { game.cancelHoverCard(pickId); });
                 pick.addEventListener("click", function () { game.checkCard(pickId); });
             }
         }
