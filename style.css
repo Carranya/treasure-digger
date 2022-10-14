@@ -1,17 +1,36 @@
 body {
     font-family: Verdana;
-    color: green;text-align: center;
+    color: green;
+    background-color: lightblue;
+    text-align: center;
 }
 
 #header {
     font-size: 2em;
     font-weight: bold;
     font-style: italic;
+    text-decoration: underline;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+}
+
+#footText {
+    position: absolute;
+    font-size: 0.8em;
+    bottom: 0.5em;
 }
 
 .infoScore {
     font-size: 1.5em;
     font-weight: bold;
+}
+
+.idBox {
+    display: flex;
+    justify-content: center;
 }
 
 .infoBox {
@@ -21,10 +40,9 @@ body {
     height: 150px;
     border: 5px solid black;
     border-radius: 10px;
-    background-color: lightblue;
+    background-color: lightgreen;
     color: green;
     top: 20%;
-    left: 40%;
     transition: transform 1s;
 }
 
@@ -39,7 +57,8 @@ body {
     color: green;
     font-weight: bold;
     border: 1px solid black;
-    background-color: lightpink;
+    border-radius: 10px;
+    background-color: limegreen;
 }
 
 #newGame:hover {
@@ -53,3 +72,4 @@ body {
 #errorBox {
     transform: translate(0, -3000px);
 }
+
